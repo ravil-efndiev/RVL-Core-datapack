@@ -1,0 +1,7 @@
+#file: ./main
+
+as (@a) {
+    at (@s) {
+        /say "I SUCK"
+    }
+}
