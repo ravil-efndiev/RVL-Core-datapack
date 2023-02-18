@@ -1,7 +1,4 @@
 #file: ./main
 
-as (@a) {
-    at (@s) {
-        /say "I SUCK"
-    }
-}
+# spawn randomizer by timer
+/function rvlcore:random/create_randomizer_timer

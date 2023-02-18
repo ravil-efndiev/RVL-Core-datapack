@@ -1,0 +1,44 @@
+
+function "./create_randomizer" {
+
+    /kill @e[tag=randomizer]
+
+    var random init = 0
+
+    for (1, 9) {
+        /summon minecraft:area_effect_cloud ~ ~ ~ {Tags:["randomizer"],Duration:2100000000}
+        random @e[tag=randomizer] += 1
+    }
+
+    var tenConst = 10;
+}
+
+
+function "./get_random" {
+    random random = 0
+    if (random iterator >= 1) {
+        /function rvlcore:random/update_random
+    }
+}
+
+
+function "./update_random" {
+    random random *= tenConst
+    random random += random @e[type=area_effect_cloud,tag=randomizer,limit=1,sort=random]
+
+    random iterator -= 1
+    if (random iterator >= 1) {
+        /function rvlcore:random/update_random
+    }
+}
+
+function "./create_randomizer_timer" {
+    crtimer += 1
+
+    if (crtimer >= 100) {
+        as (@a), at (@s) {
+            /function rvlcore:random/create_randomizer
+        }
+        crtimer = 0
+    }
+}

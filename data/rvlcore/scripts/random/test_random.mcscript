@@ -1,0 +1,9 @@
+#file: ./test_random
+
+random iterator = 2
+
+/function rvlcore:random/get_random
+
+if (random random >= 50) {
+    /say "random got"
+}

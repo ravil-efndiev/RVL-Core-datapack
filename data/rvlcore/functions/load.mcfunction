@@ -7,3 +7,4 @@
 function rvlcore:mcscript/load
 
 tellraw @a {"text": "welcome, RVL Core started successfuly", "color": "blue", "bold": true}
+scoreboard players set crtimer crtimer 0
