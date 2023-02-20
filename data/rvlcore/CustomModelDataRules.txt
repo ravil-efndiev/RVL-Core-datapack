@@ -1,0 +1,9 @@
+CustomModelData notation for this and all other datapacks from RVL
+
+1-1000  - items and ingredients (steel etc)
+
+1001-2000 - weapons and instruments
+
+2001-3000 - block models
+
+3001-4000 - mob models

@@ -1,0 +1,8 @@
+function "./table_mainloop" {
+}
+
+function "./standart_recipes" {
+    asat (@e[type=armor_stand, tag=rvl_table]), if ('block ~ ~ ~ dropper{Items:[{Slot:1b,id:"minecraft:iron_ingot",Count:1b},{Slot:3b,id:"minecraft:iron_ingot",Count:1b},{Slot:4b,id:"minecraft:blaze_powder",Count:1b},{Slot:5b,id:"minecraft:iron_ingot",Count:1b},{Slot:7b,id:"minecraft:iron_ingot",Count:1b}]}') {
+        /data merge block ~ ~ ~ {Items:[{Slot:4b, id:"minecraft:iron_ingot", Count:1b, tag:{display:{Name:'{"text":"steel ingot","italic":"false"}'}, steelIngot:1b, CustomModelData:1}}]}
+    }
+}

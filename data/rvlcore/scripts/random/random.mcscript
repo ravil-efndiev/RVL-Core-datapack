@@ -1,9 +1,9 @@
 
 function "./create_randomizer" {
-
     /kill @e[tag=randomizer]
 
-    var random init = 0
+    var crtimer = 0
+    var random init = 0;
 
     for (1, 9) {
         /summon minecraft:area_effect_cloud ~ ~ ~ {Tags:["randomizer"],Duration:2100000000}

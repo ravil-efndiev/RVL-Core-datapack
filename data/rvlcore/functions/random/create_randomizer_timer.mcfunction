@@ -6,5 +6,5 @@
 ######
 # this file is generated based on a function specified in.//data/rvlcore/functions/random/random.mcscript
 scoreboard players add crtimer crtimer 1
-execute if score crtimer crtimer matches 200.. run execute as @a at @s run function rvlcore:random/create_randomizer
-execute if score crtimer crtimer matches 200.. run scoreboard players set crtimer crtimer 0
+execute if score crtimer crtimer matches 100.. run execute as @a at @s run function rvlcore:random/create_randomizer
+execute if score crtimer crtimer matches 100.. run scoreboard players set crtimer crtimer 0

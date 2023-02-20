@@ -6,6 +6,7 @@
 ######
 # this file is generated based on a function specified in.//data/rvlcore/functions/random/random.mcscript
 kill @e[tag=randomizer]
+scoreboard players set crtimer crtimer 0
 scoreboard players set init random 0
 summon minecraft:area_effect_cloud ~ ~ ~ {Tags:["randomizer"],Duration:2100000000}
 scoreboard players add @e[tag=randomizer] random 1

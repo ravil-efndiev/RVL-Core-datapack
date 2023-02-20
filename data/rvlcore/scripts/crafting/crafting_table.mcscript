@@ -1,0 +1,17 @@
+function "./set_table" {
+    asat (@e[type=falling_block, nbt={BlockState:{Name:"minecraft:anvil"}}]), if ("block ~ ~-1 ~ minecraft:crafting_table align xyz") {
+        /summon armor_stand ~0.5 ~-1 ~0.5 {NoGravity: 1b, Invulnerable: 1b, Invisible:1b, Tags:["rvl_table", "temp"]}
+        /kill @s
+    }
+    asat (@e[type=armor_stand, tag=temp]) { 
+        /setblock ~ ~ ~ dropper replace 
+        /tag @s remove temp
+    }
+}
+
+function "./break_table" {
+    asat (@e[type=armor_stand, tag=rvl_table]), if (!"block ~ ~ ~ dropper") {
+        /summon item ~ ~ ~ {Item:{id:"minecraft:bat_spawn_egg",Count:1b,tag:{display:{Name:'{"text":"rvl crafting table","italic":false}'},CustomModelData:2001,EntityTag:{id:"minecraft:armor_stand", NoGravity: 1b, Invulnerable: 1b, Invisible:1b, Tags:["rvl_table","temp"]}}}}
+        /kill @s
+    }
+}
