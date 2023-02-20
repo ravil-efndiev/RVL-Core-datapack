@@ -1,8 +1,19 @@
 function "./table_mainloop" {
+    asat (@e[type=armor_stand, tag=rvl_table]), align ("xyz") {
+        /item replace entity @s armor.head with diamond_hoe{CustomModelData:2001}
+        /tp @s ~0.5 ~ ~0.5
+        /data modify entity @s Rotation set value 0
+    }
+
 }
 
 function "./standart_recipes" {
-    asat (@e[type=armor_stand, tag=rvl_table]), if ('block ~ ~ ~ dropper{Items:[{Slot:1b,id:"minecraft:iron_ingot",Count:1b},{Slot:3b,id:"minecraft:iron_ingot",Count:1b},{Slot:4b,id:"minecraft:blaze_powder",Count:1b},{Slot:5b,id:"minecraft:iron_ingot",Count:1b},{Slot:7b,id:"minecraft:iron_ingot",Count:1b}]}') {
-        /data merge block ~ ~ ~ {Items:[{Slot:4b, id:"minecraft:iron_ingot", Count:1b, tag:{display:{Name:'{"text":"steel ingot","italic":"false"}'}, steelIngot:1b, CustomModelData:1}}]}
+    asat (@e[type=armor_stand, tag=rvl_table]) {
+        if ('block ~ ~ ~ dropper{Items:[{Slot:1b,id:"minecraft:iron_ingot",Count:1b},{Slot:3b,id:"minecraft:iron_ingot",Count:1b},{Slot:4b,id:"minecraft:blaze_powder",Count:1b},{Slot:5b,id:"minecraft:iron_ingot",Count:1b},{Slot:7b,id:"minecraft:iron_ingot",Count:1b}]}') {
+            /data merge block ~ ~ ~ {Items:[{Slot:4b, id:"minecraft:iron_ingot", Count:1b, tag:{display:{Name:'{"text":"steel ingot","italic":"false"}'}, steelIngot:1b, CustomModelData:1}}]}
+        }
+        if ('block ~ ~ ~ dropper{Items:[{Slot:0b,id:"minecraft:iron_ingot",Count:1b, tag:{steelIngot:1b}}, {Slot:1b,id:"minecraft:iron_ingot",Count:1b, tag:{steelIngot:1b}}, {Slot:2b,id:"minecraft:iron_ingot",Count:1b, tag:{steelIngot:1b}}, {Slot:4b, id:"minecraft:stick", Count: 1b},{Slot:7b, id:"minecraft:iron_nugget", Count:1b}]}') {
+            /data merge block ~ ~ ~ {Items:[{Slot:4b, id:"minecraft:iron_pickaxe", Count:1b, tag:{display:{Name:'{"text":"steel hammer", "italic":false}'}, CustomModelData:1001, steelHammer:1b}}]}
+        }
     }
 }
